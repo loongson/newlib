@@ -3601,6 +3601,9 @@ case "${target}" in
   i[3456789]86-*-*)
     libgloss_dir=i386
     ;;
+  loongarch*-*-* )
+    libgloss_dir=loongarch
+    ;;
   m68hc11-*-*|m6811-*-*|m68hc12-*-*|m6812-*-*)
     libgloss_dir=m68hc11
     ;;

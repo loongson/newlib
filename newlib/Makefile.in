@@ -1193,7 +1193,7 @@ site.exp: Makefile
 	@echo '# edit the last section' >> $@-t
 	@echo 'set tool $(DEJATOOL)' >> $@-t
 	@echo 'set tool_version $(VERSION)' >> $@-t
-	@echo 'set srcdir $(srcdir)/testsuite' >> $@-t
+	@echo 'set srcdir ${PWD}/$(srcdir)/testsuite' >> $@-t
 	@echo 'set objdir' `pwd` >> $@-t
 	@echo 'set tmpdir' `pwd`/testsuite >> $@-t
 	@echo 'set multibuildtop ./$(MULTIBUILDTOP)' >> $@-t

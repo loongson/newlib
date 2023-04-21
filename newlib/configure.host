@@ -214,6 +214,11 @@ case "${host_cpu}" in
   lm32)
 	machine_dir=lm32
 	;;
+  loongarch*)
+	machine_dir=loongarch
+	newlib_cflags="${newlib_cflags} -DHAVE_RENAME"
+	have_init_fini=no
+	;;
   m32c)
 	machine_dir=m32c	
 	newlib_cflags="${newlib_cflags} -DPREFER_SIZE_OVER_SPEED -DSMALL_MEMORY"
@@ -791,6 +796,9 @@ newlib_cflags="${newlib_cflags} -DCLOCK_PROVIDED -DMALLOC_PROVIDED -DEXIT_PROVID
 	default_newlib_io_long_long="yes"
 	;;
   lm32-*-*)
+	syscall_dir=syscalls
+	;;
+  loongarch*-*-*)
 	syscall_dir=syscalls
 	;;
   m32c-*-*)

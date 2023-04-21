@@ -213,6 +213,10 @@
 #define __IEEE_BIG_ENDIAN
 #endif
 
+#ifdef __loongarch__
+#define __IEEE_LITTLE_ENDIAN
+#endif
+
 #ifdef __M32R__
 #define __IEEE_BIG_ENDIAN
 #endif

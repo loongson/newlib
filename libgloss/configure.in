@@ -120,6 +120,9 @@ case "${target}" in
   lm32*-*-*)
 	AC_CONFIG_SUBDIRS([lm32])
 	;;
+  loongarch*-*-*)
+	AC_CONFIG_SUBDIRS([loongarch])
+	;;
   mcore-*-*)
 	AC_CONFIG_SUBDIRS([mcore])
 	;;
