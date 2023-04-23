@@ -803,6 +803,7 @@ i386
 i960
 iq2000
 lm32
+loongarch
 m32c
 m32r
 m68hc11
@@ -11469,7 +11470,7 @@ else
   lt_dlunknown=0; lt_dlno_uscore=1; lt_dlneed_uscore=2
   lt_status=$lt_dlunknown
   cat > conftest.$ac_ext <<_LT_EOF
-#line 11472 "configure"
+#line 11473 "configure"
 #include "confdefs.h"
 
 #if HAVE_DLFCN_H
@@ -11575,7 +11576,7 @@ else
   lt_dlunknown=0; lt_dlno_uscore=1; lt_dlneed_uscore=2
   lt_status=$lt_dlunknown
   cat > conftest.$ac_ext <<_LT_EOF
-#line 11578 "configure"
+#line 11579 "configure"
 #include "confdefs.h"
 
 #if HAVE_DLFCN_H
@@ -11855,6 +11856,8 @@ subdirs="$subdirs a29k"
 	iq2000) subdirs="$subdirs iq2000"
  ;;
 	lm32) subdirs="$subdirs lm32"
+ ;;
+	loongarch) subdirs="$subdirs loongarch"
  ;;
 	m32c) subdirs="$subdirs m32c"
  ;;

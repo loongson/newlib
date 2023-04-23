@@ -267,6 +267,12 @@ _BEGIN_STD_C
 #define _JBLEN 19
 #endif
 
+#ifdef __loongarch__
+#define _JBLEN 21
+#define _JBTYPE long long
+#endif
+
+
 #ifdef __m32c__
 #if defined(__r8c_cpu__) || defined(__m16c_cpu__)
 #define _JBLEN (22/2)

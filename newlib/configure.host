@@ -46,6 +46,7 @@
 #   crt1_dir            directory where crt1 object is found
 #   have_crt0		"yes"/"no" if crt0 is/isn't provided.
 #			"" if crt0 is provided when sys_dir is set
+#   have_init_fini     have init/fini ("yes" or "no", set to "yes" by default)
 #   noinclude		list of include files to not install
 
 newlib_cflags=
@@ -64,6 +65,7 @@ mach_add_setjmp=
 crt1=
 crt1_dir=
 have_crt0=
+have_init_fini=yes
 use_libtool=no
 have_sys_mach_dir=no
 default_newlib_io_c99_formats=no
@@ -173,6 +175,11 @@ case "${host_cpu}" in
 	;;
   lm32)
 	machine_dir=lm32
+	;;
+  loongarch*)
+        machine_dir=loongarch
+        newlib_cflags="${newlib_cflags} -DHAVE_RENAME"
+        have_init_fini=no
 	;;
   m32c)
 	machine_dir=m32c
@@ -655,6 +662,9 @@ case "${host}" in
   lm32-*-*)
 	syscall_dir=syscalls
 	;;
+  loongarch*-*-*)
+        syscall_dir=syscalls
+        ;;
   m32c-*-*)
 	default_newlib_io_long_long="yes"
 	newlib_cflags="${newlib_cflags} -DMISSING_SYSCALL_NAMES -DABORT_PROVIDED"
@@ -815,4 +825,9 @@ fi
 
 if test -z "${have_crt0}" && test -n "${sys_dir}"; then
   have_crt0="yes"
+fi
+
+# Have init/finit if not explicitly specified otherwise
+if [ "x${have_init_fini}" != "xno" ]; then
+       newlib_cflags="${newlib_cflags} -DHAVE_INIT_FINI"
 fi

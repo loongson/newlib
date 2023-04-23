@@ -1,5 +1,6 @@
 #include <wctype.h>
 #include <newlib.h>
+#include <ctype.h>
 #include "check.h"
 
 int main()

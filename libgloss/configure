@@ -688,6 +688,7 @@ d30v
 fr30
 frv
 lm32
+loongarch
 mcore
 mep
 moxie
@@ -2484,6 +2485,10 @@ case "${target}" in
 	;;
   lm32*-*-*)
 	subdirs="$subdirs lm32"
+
+	;;
+  loongarch*-*-*)
+	subdirs="$subdirs loongarch"
 
 	;;
   mcore-*-*)

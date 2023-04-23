@@ -61,6 +61,8 @@ case "${target}" in
 	;;
   lm32-*-*)
 	;;
+  loongarch-*-*)
+	;;
   m32r-*-*)
 	;;
   mn10?00-*-*)
