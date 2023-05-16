@@ -216,6 +216,7 @@ case "${host_cpu}" in
 	;;
   loongarch*)
 	machine_dir=loongarch
+	libm_machine_dir=loongarch
 	newlib_cflags="${newlib_cflags} -DHAVE_RENAME"
 	have_init_fini=no
 	;;

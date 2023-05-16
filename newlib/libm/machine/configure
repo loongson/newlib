@@ -796,6 +796,7 @@ riscv
 x86_64
 powerpc
 sparc
+loongarch
 mips'
 
 # Initialize some variables set by options.
@@ -11458,7 +11459,7 @@ else
   lt_dlunknown=0; lt_dlno_uscore=1; lt_dlneed_uscore=2
   lt_status=$lt_dlunknown
   cat > conftest.$ac_ext <<_LT_EOF
-#line 11461 "configure"
+#line 11462 "configure"
 #include "confdefs.h"
 
 #if HAVE_DLFCN_H
@@ -11564,7 +11565,7 @@ else
   lt_dlunknown=0; lt_dlno_uscore=1; lt_dlneed_uscore=2
   lt_status=$lt_dlunknown
   cat > conftest.$ac_ext <<_LT_EOF
-#line 11567 "configure"
+#line 11568 "configure"
 #include "confdefs.h"
 
 #if HAVE_DLFCN_H
@@ -11828,6 +11829,8 @@ subdirs="$subdirs aarch64"
 	powerpc) subdirs="$subdirs powerpc"
  ;;
 	sparc) subdirs="$subdirs sparc"
+ ;;
+	loongarch) subdirs="$subdirs loongarch"
  ;;
 	mips) subdirs="$subdirs mips"
  ;;
