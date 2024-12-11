@@ -33,6 +33,10 @@
 
 #include <sys/_types.h>
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #ifndef	__fenv_static
 #define	__fenv_static	static
 #endif
@@ -77,6 +81,16 @@ extern const fenv_t	*_fe_dfl_env;
 #ifndef __loongarch_soft_float
 #define _FPU_GETCW(cw) __asm__ volatile ("movfcsr2gr %0,$r0" : "=r" (cw))
 #define _FPU_SETCW(cw) __asm__ volatile ("movgr2fcsr $r0,%0" : : "r" (cw))
+#endif
+
+#if __BSD_VISIBLE
+int feenableexcept(int);
+int fedisableexcept(int);
+int fegetexcept(void);
+#endif /* __BSD_VISIBLE */
+
+#ifdef __cplusplus
+}
 #endif
 
 #endif	/* !_FENV_H_ */
