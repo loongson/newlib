@@ -31,7 +31,9 @@ LEAF_NO_ALIGN(setjmp)
 #define GPR_OFFSET(NAME, OFFS) REG_S NAME, a0, OFFS * SZREG
 #define FPR_OFFSET(NAME, OFFS) FREG_S NAME, a0, GPR_COUNT * SZREG + OFFS * SZFREG
 	GPR_LAYOUT
+#ifndef __loongarch_soft_float
 	FPR_LAYOUT
+#endif
 #undef  GPR_OFFSET
 #undef  FPR_OFFSET
 	move     a0, zero
@@ -42,7 +44,9 @@ LEAF_NO_ALIGN(longjmp)
 #define GPR_OFFSET(NAME, OFFS) REG_L NAME, a0, OFFS * SZREG
 #define FPR_OFFSET(NAME, OFFS) FREG_L NAME, a0, GPR_COUNT * SZREG + OFFS * SZFREG
 	GPR_LAYOUT
+#ifndef __loongarch_soft_float
 	FPR_LAYOUT
+#endif
 #undef  GPR_OFFSET
 #undef  FPR_OFFSET
 	sltui	a0, a1, 1
