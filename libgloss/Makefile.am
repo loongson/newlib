@@ -131,6 +131,9 @@ endif
 if CONFIG_LM32
 include lm32/Makefile.inc
 endif
+if CONFIG_LOONGARCH
+include loongarch/Makefile.inc
+endif
 if CONFIG_M32R
 include m32r/Makefile.inc
 endif
